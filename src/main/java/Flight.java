@@ -8,8 +8,7 @@ public class Flight {
     customers = new ArrayList<>();
     }
 
-    public ArrayList<Customer> getCustomers()
-    {
-        return this.customers;
+    public int countCustomers(){
+        return this.customers.size();
     }
 }
