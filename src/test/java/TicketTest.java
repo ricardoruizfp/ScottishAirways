@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class TicketTest {
@@ -10,12 +12,13 @@ public class TicketTest {
     Customer customer1;
     Ticket ticket1;
 
+
     @Before
     public void before(){
         customer1 = new Customer("Count Luggage");
         luggage1 = new Luggage();
         flight1 = new Flight();
-        ticket1 = new Ticket(customer1, luggage1, flight1);
+        ticket1 = new Ticket(customer1, flight1);
     }
 
     @Test
@@ -30,7 +33,14 @@ public class TicketTest {
     }
 
     @Test
-    public void ticketHasLuggage(){
-        assertEquals(luggage1, ticket1.getLuggage());
+    public void zeroLuggageSituation(){
+        assertEquals(0, ticket1.countLuggage());
     }
+
+    @Test
+    public void ticketCanAddLuggage(){
+        ticket1.addLuggage(luggage1);
+        assertEquals(1, ticket1.countLuggage());
+    }
+
 }

@@ -1,12 +1,15 @@
+import java.util.ArrayList;
+
 public class Ticket {
 
     private Customer customer;
-    private Luggage luggage; //Ricardo disagrees
+    private ArrayList<Luggage> luggage;
     private Flight flight;
 
-    public Ticket(Customer customer, Luggage luggage, Flight flight) {
+
+    public Ticket(Customer customer, Flight flight) {
         this.customer = customer;
-        this.luggage = luggage;
+        this.luggage = new ArrayList<Luggage>();
         this.flight = flight;
     }
 
@@ -14,11 +17,17 @@ public class Ticket {
         return customer;
     }
 
-    public Luggage getLuggage() {
-        return luggage;
-    }
-
     public Flight getFlight() {
         return flight;
     }
+
+    public int countLuggage(){
+        return this.luggage.size();
+    }
+
+    public void addLuggage(Luggage luggage){
+        this.luggage.add(luggage);
+    }
+
+
 }
