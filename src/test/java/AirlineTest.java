@@ -6,21 +6,21 @@ import static org.junit.Assert.assertTrue;
 
 public class AirlineTest {
 
-    Airline airline;
-    Customer customer;
-    Flight flight;
+    Airline airline1;
+    Customer customer1;
+    Flight flight1;
 
     @Before
     public void before(){
-        airline = new Airline();
-        customer = new Customer("Mike");
-        flight = new Flight();
+        airline1 = new Airline();
+        customer1 = new Customer("Mike");
+        flight1 = new Flight();
 
     }
 
-//    @Test
-//    public void canCheckCustomerIntoFlight(){
-//        airline.checkInCustomer(customer, flight);
-//        assertEquals(1, flight.countCustomers());
-//    }
+    @Test
+    public void canCheckCustomerIntoFlight(){
+        airline1.checkInCustomer(customer1, flight1);
+        assertEquals(1, flight1.countCustomers());
+    }
 }

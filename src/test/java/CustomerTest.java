@@ -5,14 +5,14 @@ import static junit.framework.TestCase.assertEquals;
 
 public class CustomerTest {
 
-        Customer customer;
+        Customer customer1;
         @Before
         public void before(){
-            customer = new Customer("Mike");
+            customer1 = new Customer("Mike");
         }
 
         @Test
         public void hasName(){
-            assertEquals("Mike", customer.getName());
+            assertEquals("Mike", customer1.getName());
         }
 }
